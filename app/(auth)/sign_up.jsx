@@ -12,6 +12,7 @@ import { images } from "../../constants";
 import FormField from "../../components/FormField";
 import CustomButton from "../../components/CustomButton";
 import { Redirect, router } from "expo-router";
+import { createUser } from "../../lib/appwrite";
 
 const Sign_Up = () => {
   const [form, setForm] = useState({
@@ -19,6 +20,12 @@ const Sign_Up = () => {
     email: "",
     password: "",
   })
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const submit = () => { 
+    createUser();
+  }
+
   return (
     <SafeAreaView className="bg-primary h-full">
       <ScrollView contentContainerStyle={{ height: "100%" }}>
@@ -62,9 +69,9 @@ const Sign_Up = () => {
             title="Sign Up"
             textStyles="font-pmedium text-lg"
             containerStyle="mt-10"
-            handlePress={() => {
-              console.log("signup");
-            }}
+            isLoading={isSubmitting}
+            handlePress={submit}
+            
           />
           <View className="flex-row justify-center items-center w-full mt-8">
             <Text className="text-white">Already have an account? </Text>

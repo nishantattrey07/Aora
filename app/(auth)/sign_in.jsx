@@ -10,6 +10,11 @@ const Sign_In = () => {
     email: '',
     password: ''
   })
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const submit = () => { 
+    console.log("login")
+  }
   return (
     <SafeAreaView className="bg-primary  h-full">
       <ScrollView contentContainerStyle={{ height: "100%" }}>
@@ -49,7 +54,8 @@ const Sign_In = () => {
             title="Log In"
             textStyles="font-pmedium text-lg"
             containerStyle="mt-10"
-            handlePress={() => {console.log("login")}}
+            handlePress={submit}
+            isLoading={isSubmitting}
             
           />
 
