@@ -13,7 +13,7 @@ const Sign_In = () => {
   return (
     <SafeAreaView className="bg-primary  h-full">
       <ScrollView contentContainerStyle={{ height: "100%" }}>
-        <View className="justify-center items-left px-4">
+        <View className="justify-center items-left px-4 mt-20">
           <Image
             source={images.logo}
             className="w-[115px] h-[35px]"
