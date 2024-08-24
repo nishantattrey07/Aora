@@ -21,7 +21,6 @@ const Sign_In = () => {
           />
 
           <Text className="mt-9 mb-4 text-white text-2xl font-psemibold ">
-            {" "}
             Sign in
           </Text>
           <FormField
@@ -37,7 +36,7 @@ const Sign_In = () => {
             title="Password"
             value={form.password}
             handleChangeText={(e) => setForm({ ...form, password: e })}
-            placeholder="mypass 🤫"
+            placeholder="**********"
             otherStyles="mt-5"
             keyboardType="password"
           />
@@ -50,6 +49,8 @@ const Sign_In = () => {
             title="Log In"
             textStyles="font-pmedium text-lg"
             containerStyle="mt-10"
+            handlePress={() => {console.log("login")}}
+            
           />
 
           <View className="flex-row justify-center items-center w-full mt-8">
