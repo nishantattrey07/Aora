@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { useFonts } from "expo-font";
 import { Link, SplashScreen,Stack } from "expo-router";
 import React from "react";
+import GlobalProvider from "../context/GlobalProvider";
 
 SplashScreen.preventAutoHideAsync();
 const RootLayout = () => {
@@ -26,13 +27,15 @@ const RootLayout = () => {
   if (!error && !fontsLoaded) return null;
 
   return (
-    <Stack
-      screenOptions={{
-        headerShown:false
-      }}
-    >
-      <Stack.Screen name="index" options={{ headerShown: false }} />
-    </Stack>
+    <GlobalProvider>
+      <Stack
+        screenOptions={{
+          headerShown: false,
+        }}
+      >
+        <Stack.Screen name="index" options={{ headerShown: false }} />
+      </Stack>
+    </GlobalProvider>
   );
 };
 
